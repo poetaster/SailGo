@@ -6,6 +6,16 @@ Item {
 
     property bool hoverEnabled: false
 
+    function getMarkers(index){
+        var markers = [42,48,84,120,126]
+        if ( markers.indexOf(index) !== -1) {
+            console.debug('index: ' + index);
+            return "black"
+        } else {
+            return "empty"
+        }
+    }
+
     Grid {
         anchors.centerIn: parent
         anchors.fill: parent
@@ -17,6 +27,7 @@ Item {
 
         Repeater {
             model : boardListModel
+            property string curentMarker: "empty"
 
             MouseArea {
                 id: area
@@ -36,15 +47,35 @@ Item {
                     anchors.fill: parent
 
                     state: squareState
-                    //onStateChanged: console.debug('squareState: ' + pieceState);
+                    /*onStateChanged: {
+                        console.debug('squareState: ' + pieceState);
+                        console.debug('index: ' + model.index);
+                    }*/
+                    GoPiece {
+                        x: parent.width/3 + 2
+                        y: parent.width/3 + 2
+                        id: marker
+                        width:parent.width / 4
+                        height:parent.width / 4
+                        state: getMarkers(model.index)
+                        onStateChanged: {
+                            var markers = [42,48,133,139]
+                            if ( markers.indexOf(model.index) !== -1) {
+                                console.debug('index: ' + model.index);
+                                currentMarker = "black"
+                            } else {
+
+                            }
+
+                        }
+
+                    }
 
                     GoPiece {
                         id: hoverPiece
-
                         anchors.fill: parent
-                        state: area.containsMouse ? boardController.nextPlayer : "empty"
-
                         opacity: 0.5
+                        state: area.containsMouse ? boardController.nextPlayer : "empty"
                     }
 
 
@@ -52,9 +83,12 @@ Item {
                         anchors.centerIn: parent
                         width: parent.width
                         height: width
-
                         state: pieceState
-                       // onStateChanged: console.debug('pieceState: ' + pieceState);
+                        onStateChanged: {
+                            console.debug('pieceState: ' + pieceState);
+                            console.debug('index: ' + model.index);
+                        }
+
                     }
                 }
             }
