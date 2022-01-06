@@ -19,6 +19,7 @@ public:
 
     Q_INVOKABLE void playMove(int linearIndex);
     Q_INVOKABLE void playMove(int line, int column);
+    Q_INVOKABLE void resetBoard();
 
     QString nextPlayer();
 	 player_t nextPlayerIndex();
@@ -38,7 +39,7 @@ private:
     };
     player_t nextPlayer_;
     BoardModel * model_;
-	 MoveAnalysis *analysis;
+    MoveAnalysis *analysis;
 
 };
 

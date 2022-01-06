@@ -35,11 +35,12 @@ import "../../elements"
 Page {
     id: page
 
+    property var model: boardListModel
+
     SilicaFlickable {
         id: flickable
 
         anchors.fill: parent
-
         PullDownMenu {
             MenuItem {
                 text: qsTr("About")
@@ -49,6 +50,9 @@ Page {
             }
             MenuItem {
                 text: qsTr("New game")
+                onClicked: {
+                    boardController.resetBoard();
+                }
             }
         }
 

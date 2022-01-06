@@ -5,7 +5,7 @@ AbstractBoardController::AbstractBoardController(BoardModel * model, QObject *pa
 {
     this->model_ = model;
     this->nextPlayer_ = BlackPlayer;
-	 this->analysis = new MoveAnalysis(model);
+    this->analysis = new MoveAnalysis(model);
 }
 
 AbstractBoardController::~AbstractBoardController()
@@ -22,6 +22,16 @@ void AbstractBoardController::playMove(int linearIndex)
 	this->model_->setPiece(linearIndex, this->nextPlayer_ == WhitePlayer ? model_->WhitePiece : model_->BlackPiece);
 	analysis->prisoners();
 	switchPlayer();
+}
+
+void AbstractBoardController::resetBoard()
+{
+    qDebug("Reset");
+    int n = 0;
+    while (n < 169 ) {
+        this->model_->setPiece(n, model_->NoPiece);
+        n++;
+    }
 }
 
 void AbstractBoardController::playMove(int line, int column)

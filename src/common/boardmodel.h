@@ -30,11 +30,11 @@ public:
         BlackPiece
     };
 
-	 inline piece_t operator[] (int i) { return p_pieces[i]; }
+    inline piece_t operator[] (int i) { return p_pieces[i]; }
 
     int rowCount(const QModelIndex & parent = QModelIndex()) const;
     int columnCount(const QModelIndex & parent = QModelIndex()) const;
-	 unsigned int nslotsCount() const;
+    unsigned int nslotsCount() const;
 
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
     QHash<int, QByteArray> roleNames() const;
@@ -46,14 +46,15 @@ public:
 
     void setPiece(int row, int column, PieceState state);
     void setPiece(int linearIndex, PieceState state);
-	 void setPieceTmp(int linearIndex, piece_t state);
-	 void prisoner(int linearIndex);
+    void setPieceTmp(int linearIndex, piece_t state);
+    void prisoner(int linearIndex);
 
-	 void setForbiddenPlay(int linearIndex);
+    void setForbiddenPlay(int linearIndex);
     bool isForbidden(int linearIndex);
 
     bool isEmpty(int row, int column);
     bool isEmpty(int linearIndex);
+
 signals:
 
 public slots:
@@ -61,9 +62,9 @@ public slots:
 private:
     int nrows_;
     int ncolumns_;
-	 int nslots;
+    int nslots;
     piece_t * p_pieces;
-	 int forbidden; // to avoid recursive play
+    int forbidden; // to avoid recursive play
 };
 
 #endif // BOARDMODEL_H
