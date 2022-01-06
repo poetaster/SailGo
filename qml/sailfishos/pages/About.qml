@@ -27,19 +27,22 @@ Page {
                 text: ""
             }
             Label {
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
                 linkColor: "#ffffff"
                 text: "<a href=\"https://github.com/LouJo/SailGo\">LouJo</a> \n"  +
                                 "\n ©2015 Louis-Joseph Fournier \n"
                 color: Theme.primaryColor
                 wrapMode: TextEdit.WordWrap
-                width: parent.width
                 onLinkActivated: {
                     Qt.openUrlExternally(link)
                 }
             }
             Label {
                 width: parent.width - (2 * Theme.paddingLarge)
+                horizontalAlignment: Text.AlignHCenter
+                anchors.horizontalCenter: parent.horizontalCenter
                 wrapMode: Text.WrapWord
                 text: " ©2021 Mark Washeim \n\n" + qsTr("GPLv2 license.")
                 color: Theme.primaryColor
@@ -50,11 +53,12 @@ Page {
                 text: ""
             }
             Label {
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 linkColor: "#ffffff"
                 wrapMode: TextEdit.WordWrap
-                width: parent.width
                 //font.pixelSize: units.fx("small")
                 text: "<a href=\"https://github.com/poetaster/harbour-sailgo\">Source: github</a>"
                 onLinkActivated: {
