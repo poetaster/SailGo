@@ -2,9 +2,20 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>About</name>
+    <message>
+        <source>SailGo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GPLv2 license.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
+        <source>SailGo</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -18,11 +29,8 @@
         <source>SailGo</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>main</name>
     <message>
-        <source>Hello World</source>
+        <source>About</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
