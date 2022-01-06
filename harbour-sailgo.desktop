@@ -8,3 +8,6 @@ Name=SailGo
 # your app name in German locale (de)
 Name[de]=harbour-sailgo
 
+[X-Sailjail]
+OrganizationName=de.poetaster
+ApplicationName=harbour-moremahjong
