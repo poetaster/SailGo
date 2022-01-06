@@ -23,16 +23,15 @@ SOURCES += src/sailfishos/harbour-sailgo.cpp \
 OTHER_FILES += qml/harbour-sailgo.qml \
     rpm/harbour-sailgo.changes.in \
     rpm/harbour-sailgo.spec \
-    rpm/harbour-sailgo.yaml \
     translations/*.ts \
     harbour-sailgo.desktop \
     harbour-sailgo.png \
 
 # to disable building translations every time, comment out the
 # following CONFIG line
-#CONFIG += sailfishapp_i18n
+CONFIG += sailfishapp_i18n
 
-#TRANSLATIONS += translations/harbour-sailgo-de.ts
+TRANSLATIONS += translations/harbour-sailgo-de.ts
 
 HEADERS += \
     src/common/abstractboardcontroller.h \

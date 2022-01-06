@@ -13,13 +13,12 @@ Name:       harbour-sailgo
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    A Go game for Sailfish
-Version:    0.3
+Version:    0.4
 Release:    1
 Group:      Qt/Qt
 License:    GPLv2
 URL:        https://github.com/poetaster/SailGo
 Source0:    %{name}-%{version}.tar.bz2
-Source100:  harbour-sailgo.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -30,6 +29,20 @@ BuildRequires:  desktop-file-utils
 %description
 A Go game for SailfishOS
 
+%if "%{?vendor}" == "chum"
+PackageName: SailGo
+Type: desktop-application
+Categories:
+ - Game
+DeveloperName: Mark Washeim
+Custom:
+ - Repo: https://github.com/poetaster/SailGo
+Icon: https://raw.githubusercontent.com/poetaster/SailGo/master/icons/172x172/harbour-sailgo.png
+Screenshots:
+ - https://raw.githubusercontent.com/poetaster/SailGo/main/Screenshot_1.png
+Url:
+  Donation: https://www.paypal.me/poetasterFOSS
+%endif
 
 %prep
 %setup -q -n %{name}-%{version}
