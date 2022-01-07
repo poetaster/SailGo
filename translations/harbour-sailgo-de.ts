@@ -9,7 +9,7 @@
         <translation>SailGo</translation>
     </message>
     <message>
-        <location filename="../qml/sailfishos/pages/About.qml" line="44"/>
+        <location filename="../qml/sailfishos/pages/About.qml" line="47"/>
         <source>GPLv2 license.</source>
         <translation>GPLv2 Lizens</translation>
     </message>
