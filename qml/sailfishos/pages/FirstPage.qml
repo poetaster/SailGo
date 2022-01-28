@@ -35,7 +35,8 @@ import "../../elements"
 Page {
     id: page
 
-    property var model: boardListModel
+    //property var model: boardListModel
+    property var model: boardController
 
     SilicaFlickable {
         id: flickable
@@ -85,6 +86,42 @@ Page {
 
                 width: Math.max(board.width * board.scale, flickable.width)
                 height: Math.max(board.height * board.scale, flickable.height)
+
+                Column {
+                    id:totals
+                    //model : boardListModel
+                    width:parent.width
+                    anchors.horizontalCenter: parent.Center
+                    anchors.bottom: board.top
+
+                    Row {
+                        height: childrenRect.height
+                        Label {
+                            width: totals.width/4
+                            text: qsTr("Black")
+                            color: Theme.highlightColor
+                        }
+                        Label {
+                            id: swart
+                            property int count: 0
+                            width: totals.width/4
+                            text: boardController.getBlacks()
+                        }
+                        Label {
+                            width: totals.width/4
+                            text: qsTr("White")
+                            color: Theme.highlightColor
+                        }
+                        Label {
+                            id: whit
+                            width: totals.width/4
+                            text: boardController.getWhites()
+                            /*onDataChanged:  {
+                             console.debug( boardController.nextPlayer);
+                            }*/
+                        }
+                    }
+                }
 
                 GoBoard {
                     id: board

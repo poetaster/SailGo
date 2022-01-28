@@ -16,13 +16,17 @@ class AbstractBoardController : public QObject
 public:
     explicit AbstractBoardController(BoardModel * model, QObject *parent = 0);
 	 ~AbstractBoardController();
-
+    int blackCount;
+    int whiteCount;
     Q_INVOKABLE void playMove(int linearIndex);
     Q_INVOKABLE void playMove(int line, int column);
     Q_INVOKABLE void resetBoard();
+    // abusing the controller, this could be 100% model.
+    Q_INVOKABLE int getBlacks();
+    Q_INVOKABLE int getWhites();
 
     QString nextPlayer();
-	 player_t nextPlayerIndex();
+    player_t nextPlayerIndex();
     void switchPlayer();
 
 signals:

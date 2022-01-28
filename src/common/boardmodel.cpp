@@ -6,7 +6,7 @@ BoardModel::BoardModel(int rows, int columns, QObject *parent) :
 {
     this->nrows_ = rows;
     this->ncolumns_ = columns;
-	 this->nslots = rows * columns;
+     this->nslots = rows * columns;
 
     p_pieces = (piece_t *) calloc(this->nslots, sizeof(piece_t));
 	 this->forbidden = -1;
@@ -45,6 +45,34 @@ void BoardModel::setPiece(int linearIndex, PieceState state)
     QModelIndex bottomRight = this->createIndex(row, column);
 
     emit this->dataChanged(topLeft, bottomRight);
+}
+
+int BoardModel::getBlackPieces()
+{
+    qDebug("count black");
+    int totalPieces = 0;
+    int n = 0;
+    while (n < 169 ) {
+        if (p_pieces[n] == BlackPiece) {
+            totalPieces++ ;
+        }
+        n++;
+    }
+    return totalPieces;
+}
+
+int BoardModel::getWhitePieces()
+{
+    qDebug("count white");
+    int totalPieces = 0;
+    int n = 0;
+    while (n < 169 ) {
+        if (p_pieces[n] == WhitePiece) {
+            totalPieces++ ;
+        }
+        n++;
+    }
+    return totalPieces;
 }
 
 void BoardModel::setPieceTmp(int linearIndex, piece_t state)

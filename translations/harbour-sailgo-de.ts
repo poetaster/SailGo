@@ -25,19 +25,29 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="46"/>
+        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="47"/>
         <source>About</source>
         <translation>Über SailGo</translation>
     </message>
     <message>
-        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="52"/>
+        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="53"/>
         <source>New game</source>
         <translation>Neues Spiel</translation>
     </message>
     <message>
-        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="65"/>
+        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="66"/>
         <source>SailGo</source>
         <translation>SailGo</translation>
+    </message>
+    <message>
+        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="101"/>
+        <source>Black</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/sailfishos/pages/FirstPage.qml" line="113"/>
+        <source>White</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -52,6 +52,8 @@ Item {
                         if (debug) console.debug('squareState: ' + pieceState);
                         if (debug) console.debug('index: ' + model.index);
                     }
+
+                    /* these are the edge and center markers */
                     GoPiece {
                         x: parent.width/3 + 2
                         y: parent.width/3 + 2
@@ -59,17 +61,6 @@ Item {
                         width:parent.width / 4
                         height:parent.width / 4
                         state: getMarkers(model.index)
-                        /*onStateChanged: {
-                            var markers = [42,48,133,139]
-                            if ( markers.indexOf(model.index) !== -1) {
-                                if (debug) console.debug('index: ' + model.index);
-                                currentMarker = "black"
-                            } else {
-
-                            }
-
-                        }*/
-
                     }
 
                     GoPiece {
@@ -78,7 +69,6 @@ Item {
                         opacity: 0.5
                         state: area.containsMouse ? boardController.nextPlayer : "empty"
                     }
-
 
                     GoPiece {
                         anchors.centerIn: parent

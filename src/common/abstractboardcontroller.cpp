@@ -21,8 +21,10 @@ void AbstractBoardController::playMove(int linearIndex)
 	}
 	this->model_->setPiece(linearIndex, this->nextPlayer_ == WhitePlayer ? model_->WhitePiece : model_->BlackPiece);
 	analysis->prisoners();
-	switchPlayer();
+    switchPlayer();
 }
+
+/* This should  be calculated. It's fixed to the 13x13 size as such */
 
 void AbstractBoardController::resetBoard()
 {
@@ -32,6 +34,16 @@ void AbstractBoardController::resetBoard()
         this->model_->setPiece(n, model_->NoPiece);
         n++;
     }
+}
+
+int AbstractBoardController::getBlacks()
+{
+    return model_->getBlackPieces();
+}
+
+int AbstractBoardController::getWhites()
+{
+    return model_->getWhitePieces();
 }
 
 void AbstractBoardController::playMove(int line, int column)

@@ -46,6 +46,10 @@ public:
 
     void setPiece(int row, int column, PieceState state);
     void setPiece(int linearIndex, PieceState state);
+
+    int getBlackPieces();
+    int getWhitePieces();
+
     void setPieceTmp(int linearIndex, piece_t state);
     void prisoner(int linearIndex);
 
@@ -58,6 +62,7 @@ public:
 signals:
 
 public slots:
+
 
 private:
     int nrows_;
