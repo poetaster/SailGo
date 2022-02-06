@@ -49,7 +49,6 @@ void BoardModel::setPiece(int linearIndex, PieceState state)
 
 int BoardModel::getBlackPieces()
 {
-    qDebug("count black");
     int totalPieces = 0;
     int n = 0;
     while (n < 169 ) {
@@ -63,7 +62,6 @@ int BoardModel::getBlackPieces()
 
 int BoardModel::getWhitePieces()
 {
-    qDebug("count white");
     int totalPieces = 0;
     int n = 0;
     while (n < 169 ) {

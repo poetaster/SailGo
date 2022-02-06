@@ -62,8 +62,7 @@ QString AbstractBoardController::nextPlayer()
 
     player = nextPlayer_ == WhitePlayer ? "white" : "black";
 
-    //getBlacks();
-    //getWhites();
+    // I'm still thinking about whether this doesn't belong in the model
     Q_EMIT blackTotalChanged();
     Q_EMIT whiteTotalChanged();
 
