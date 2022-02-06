@@ -12,6 +12,8 @@ class AbstractBoardController : public QObject
     Q_OBJECT
 
     Q_PROPERTY(QString nextPlayer READ nextPlayer NOTIFY nextPlayerChanged)
+    Q_PROPERTY(QString blackTotal READ getBlacks NOTIFY blackTotalChanged)
+    Q_PROPERTY(QString whiteTotal READ getWhites NOTIFY whiteTotalChanged)
 
 public:
     explicit AbstractBoardController(BoardModel * model, QObject *parent = 0);
@@ -22,8 +24,8 @@ public:
     Q_INVOKABLE void playMove(int line, int column);
     Q_INVOKABLE void resetBoard();
     // abusing the controller, this could be 100% model.
-    Q_INVOKABLE int getBlacks();
-    Q_INVOKABLE int getWhites();
+    Q_INVOKABLE QString getBlacks();
+    Q_INVOKABLE QString getWhites();
 
     QString nextPlayer();
     player_t nextPlayerIndex();
@@ -33,6 +35,8 @@ signals:
     QString moveForbidden();
     int playerPassed();
     void nextPlayerChanged();
+    int blackTotalChanged();
+    int whiteTotalChanged();
 
 public slots:
 
@@ -44,6 +48,8 @@ private:
     player_t nextPlayer_;
     BoardModel * model_;
     MoveAnalysis *analysis;
+    int _whiteTotal;
+    int _blackTotal;
 
 };
 

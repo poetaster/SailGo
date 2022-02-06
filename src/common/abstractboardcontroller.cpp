@@ -34,16 +34,21 @@ void AbstractBoardController::resetBoard()
         this->model_->setPiece(n, model_->NoPiece);
         n++;
     }
+    // reset the totals
+    Q_EMIT blackTotalChanged();
+    Q_EMIT whiteTotalChanged();
 }
 
-int AbstractBoardController::getBlacks()
+QString AbstractBoardController::getBlacks()
 {
-    return model_->getBlackPieces();
+    this->_blackTotal =  this->model_->getBlackPieces();
+    return QString::number(this->_blackTotal);
 }
 
-int AbstractBoardController::getWhites()
+QString AbstractBoardController::getWhites()
 {
-    return model_->getWhitePieces();
+    this->_whiteTotal =  this->model_->getWhitePieces();
+    return QString::number(this->_whiteTotal);
 }
 
 void AbstractBoardController::playMove(int line, int column)
@@ -56,6 +61,11 @@ QString AbstractBoardController::nextPlayer()
     QString player;
 
     player = nextPlayer_ == WhitePlayer ? "white" : "black";
+
+    //getBlacks();
+    //getWhites();
+    Q_EMIT blackTotalChanged();
+    Q_EMIT whiteTotalChanged();
 
     return player;
 }

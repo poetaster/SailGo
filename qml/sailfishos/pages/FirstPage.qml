@@ -105,7 +105,8 @@ Page {
                             id: swart
                             property int count: 0
                             width: totals.width/4
-                            text: boardController.getBlacks()
+                            //text: boardController.getBlacks()
+                            text: boardController.blackTotal
                         }
                         Label {
                             width: totals.width/4
@@ -115,10 +116,8 @@ Page {
                         Label {
                             id: whit
                             width: totals.width/4
-                            text: boardController.getWhites()
-                            /*onDataChanged:  {
-                             console.debug( boardController.nextPlayer);
-                            }*/
+                            //text: boardController.getWhites()
+                            text: qsTr(boardController.whiteTotal)
                         }
                     }
                 }
