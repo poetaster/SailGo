@@ -21,6 +21,16 @@
         <source>SailGo</source>
         <translation>SailGo</translation>
     </message>
+    <message>
+        <location filename="../qml/sailfishos/cover/CoverPage.qml" line="73"/>
+        <source>Black</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/sailfishos/cover/CoverPage.qml" line="84"/>
+        <source>White</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

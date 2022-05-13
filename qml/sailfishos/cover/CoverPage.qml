@@ -53,6 +53,42 @@ CoverBackground {
         anchors.centerIn: parent
         source: "/usr/share/icons/hicolor/172x172/apps/harbour-sailgo.png"
     }
+    Column {
+        id:totals
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors {
+            bottom: parent.bottom
+            bottomMargin:  Theme.paddingLarge
+        }
+
+        height: childrenRect.height
+
+        Row {
+            spacing: Theme.paddingMedium
+            height: childrenRect.height
+            anchors {
+                margins: Theme.paddingLarge
+            }
+
+            Label {
+                text: qsTr("Black: ")
+                color: Theme.highlightColor
+            }
+            Label {
+                id: swart
+                property int count: 0
+                text: boardController.blackTotal
+            }
+            Label {
+                text: qsTr("White: ")
+                color: Theme.highlightColor
+            }
+            Label {
+                id: whit
+                text: boardController.whiteTotal
+            }
+        }
+    }
     CoverActionList {
         id: coverAction
 
